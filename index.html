@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Week Range Generator</title>
+  <link href="https://fonts.googleapis.com/css?family=Didact+Gothic" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container wrapper">
+    <div class="main">
+  	    <div class="header-container">
+  	      <img src="sph-gen-header003.jpg" alt="Header Image Week Ranger Assistant" class="header-image">
+  	    </div>
+
+       <!-- <h2>Week Range Assistant</h2> -->
+        <form id="inputFormData">
+          <div class="input-group">
+            <label for="term">Prefix</label>
+            <input type="text" id="term" name="term" placeholder="e.g. Week, Lesson, Unit...">
+          </div>
+          <div class="input-group">
+            <label for="firstDay">First Day of Class</label>
+            <input type="date" id="firstDay" name="firstDay" required>
+            <small>Terms generally begin on a Monday or Tuesday. Refer to the <a href="https://onestop.umn.edu/calendar/academic-calendar" target="_BLANK">UMN Academic Calendar</a>.</small>
+          </div>
+          <div class="input-group">
+            <label for="numWeeks">Number of weeks you'd Like to generate</label>
+            <input type="number" id="numWeeks" name="numWeeks" min="1" max="52" value="14" required>
+          </div>
+          <div class="input-group">
+            <label for="appt">Choose a turn in time for assignments:</label>
+            <input type="time" id="appt" name="appt" min="09:00" max="23:59" value="23:55" required>
+          </div>
+        <div class="holiday-toggle">
+            <label for="holidayToggle">Include Spring  Break</label>
+            <input type="checkbox" id="holidayToggle" name="holidayToggle" />
+          </div>
+          <div id="holiday-fields" class="hidden">
+            <div class="input-group">
+              <label for="holidayName">Label</label>
+              <input type="text" id="holidayName" name="holidayName" placeholder="e.g. Spring Break">
+            </div>
+            <div class="input-group">
+              <label for="holidayStart">Holiday Start Date</label>
+              <input type="date" id="holidayStart" name="holidayStart">
+            </div>
+          </div>
+          <div class="button-container">
+            <div class="row">
+              <div class="col-lg">
+                <button type="submit" id="submitButton">GENERATE WEEK RANGES</button>
+              </div>
+              <div class="col-5">
+                <button type="button" class="reset-button" id="resetButton">RESET</button>
+              </div>
+            </div>
+          </div>
+        </form>
+        <div class="modal fade" id="datesAndInfo" tabindex="-1" aria-labelledby="dateAndInfoLabel" aria-hidden="true">
+          <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+              <div class="modal-header">
+                <div class="col-lg">
+                <h3 class="modal-title" id="dateAndInfolLabel">Semester Dates & Times</h3>
+                </div>
+                <div class="col">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              </div>
+              <div id="result" class="modal-body">
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+              </div>
+              </div>
+              </div>
+              </div>
+          </div> 
+        <!-- <div class="main footer">
+          <div class="linklist">
+            <a href="https://onestop.umn.edu/calendar/academic-calendar" target="_BLANK" class="linkButton">UMN Academic Calendar</a>
+          </div>
+        </div> -->
+  </div>
+ 
+ <!---<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>--->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>
